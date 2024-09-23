@@ -29,7 +29,9 @@ pipeline {
             }
             steps {
                 sh '''
+                    test -f build/index.html
                     rpm test
+                    
                      '''
             } 
         }

@@ -18,15 +18,20 @@ pipeline {
                     npm run build
                     ls -al
                      '''
-            }
-        stage('Test') {
-            sh 'echo start test'
+            } 
+        }
+         stage('test') {
+            agent{
+                docker{
+                    image 'node:18-alpine'
+                    reuseNode true
+                }
             }
             steps {
                 sh '''
                     rpm test
-                  '''
-            }    
+                     '''
+            } 
         }
     }
 }

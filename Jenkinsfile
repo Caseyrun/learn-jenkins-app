@@ -17,7 +17,7 @@ pipeline {
                     npm ci
                     npm run build
                     ls -al
-                                   '''
+                     '''
             }
         stage('Test') {
             sh 'echo start test'
@@ -25,7 +25,7 @@ pipeline {
             steps {
                 sh '''
                     rpm test
-                                   '''
+                  '''
             }    
         }
     }

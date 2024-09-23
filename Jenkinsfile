@@ -19,6 +19,14 @@ pipeline {
                     ls -al
                                    '''
             }
+        stage('Test') {
+            sh 'echo start test'
+            }
+            steps {
+                sh '''
+                    rpm test
+                                   '''
+            }    
         }
     }
 }

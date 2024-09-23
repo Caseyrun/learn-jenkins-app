@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     stages {
+        // This is a comment
         stage('Build') {
             agent{
                 docker{
@@ -21,6 +22,12 @@ pipeline {
             } 
         }
          stage('test') {
+            // This is test stage
+            /* this is a lot
+                2
+                3
+                4
+            */
             agent{
                 docker{
                     image 'node:18-alpine'

@@ -35,5 +35,10 @@ pipeline {
                      '''
             } 
         }
+        post {
+            always{
+                jumit 'test-result/junit.xml'
+            }
+        }
     }
 }
